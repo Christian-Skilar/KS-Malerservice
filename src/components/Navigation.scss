@@ -1,0 +1,100 @@
+@font-face {
+    font-family: 'Jomhuria';
+    src: url('../Font/Jomhuria-Regular.ttf') format('ttf');
+  }
+
+.navbar {
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    height: 63px;
+    background-color: #fff;
+
+    .nav-conteiner {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 10px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+.logo {
+    width: 50px;
+    z-index: 10;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    width: 75%;
+    z-index: 11;
+}
+
+.link-text {
+    text-decoration: none;
+    color: #0072BC;
+    font-size: 15px;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: 200ms;
+
+    &:hover {
+        color: #353439;
+    }
+}
+
+
+// ----- MEDIA SIZE -----
+//
+@media  screen and (max-width: 599px) {
+
+
+    .navbar {
+        background-color: #353439;
+        position: fixed;
+        height: 60px;
+        width: 100%;
+        bottom: 0;
+        justify-content: center;
+    }
+
+    .link-col {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        margin-top: 5px;
+    }
+
+    .link-text {
+        font-size: 12px;
+        color: #fff;
+        
+        &:hover {
+            color: #fff;
+        }
+    }
+
+}
+
+
+//
+// ----------  ----------
+//
+@media screen and (max-width: 400px) {
+
+    .link-text {
+        font-size: 10px;
+        padding: 10px;
+    }
+
+}
