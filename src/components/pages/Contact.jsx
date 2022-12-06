@@ -47,10 +47,10 @@ const Contact = () => {
     onSubmit: (values, {resetForm}) => {
       resetForm({ values: '' })
        emailjs.sendForm(
-        'service_re4pbq9', 
-        'template_7kt7iq8', 
+        'service_ghqop9s', 
+        'template_3hh5697', 
         form.current, 
-        'fhMC_ZVTG0ctP8k6q'
+        'TVrUQrAix6oCAvBZ_'
         )
         .then(
           (result) => {
@@ -143,7 +143,7 @@ const Contact = () => {
         </div>
         <div className='footer-row'>
           <FiMail style={style} />
-          <a className='mail-link' href="mailto:your@gmail.com">kyllo@ksmalerservice.no</a>
+          <a className='mail-link' href="mailto:kristoffer@ksmalerservice.no">kristoffer@ksmalerservice.no</a>
         </div>
         <div className='footer-row'>
           <BiBuilding style={style} />
