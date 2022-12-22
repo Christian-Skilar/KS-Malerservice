@@ -1,4 +1,8 @@
 
+.logo-mobile {
+    display: none;
+}
+
 .row {
     display: flex;
     flex-wrap: wrap;
@@ -9,15 +13,17 @@
     padding: 0 10px;
 
     h1 {
-        font-family: 'Jomhuria';
-        margin: 30px 0 -20px 0;
-        font-size: 100px;
+        font-family: 'Rubik', sans-serif;
+        margin: 30px 0 0 0;
+        font-size: 60px;
         letter-spacing: 3px;
         color: #0072BC;
     }
 
     h3 {
         width: fit-content;
+        font-family: 'Rubik', sans-serif;
+        font-size: 20px;
         color: #353439;
         border-bottom: 2px solid #0072BC;
     }
@@ -63,11 +69,26 @@
 //
 @media  screen and (max-width: 599px) {
 
+    .brand-desktop {
+        display: none;
+    }    
+
+    .logo-mobile {
+        display: block;
+        width: 120px;
+        margin: -50px auto 30px auto;
+    }
+
 
     .row {
 
-        h1 {
-            margin: -40px 0 -20px 0;
+        h3 {
+            font-size: 25px;
+            margin: 0 auto;
+        }
+
+        p {
+            font-size: 17px;
         }
     }
 }
@@ -78,22 +99,26 @@
 @media  screen and (max-width: 500px) {
 
 
+    .logo-mobile {
+        width: 100px;
+    }
+
+
     .row {
 
-        h1 {
-            font-size: 65px;
-            letter-spacing: 2px;
-            margin: -40px 0 -20px 0;
-        }
-
         h3 {
-            padding: 7px 0 0 0;
+            font-size: 20px;
+            margin: 0 auto;
         }
 
         p {
             font-size: 14px;
-            margin-bottom: 40px;
+            padding: 0 20px;
         }
 
+        a {
+            font-size: 16px;
+            margin-left: 20px;
+        }
     }
 }

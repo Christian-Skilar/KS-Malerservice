@@ -7,7 +7,7 @@
 
     h3 {
         font-weight: 100;
-        margin: -10px 0 50px 0;
+        margin: 5px 0 40px 0;
     }
 
     .border {
@@ -50,7 +50,7 @@
         color: #FC4E49;
         width: 100%;
         text-align: left;
-        font-size: 12px;
+        font-size: 20px;
         font-style: italic;
         margin: 0 0 10px 0;
       }
@@ -60,8 +60,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      width: 150px;
-      padding: 10px 30px;
+      width: 160px;
+      padding: 15px;
       border-radius: 10px;
       border: 1px solid #fff;
       background-color: #0072BC;
@@ -69,7 +69,7 @@
       font-size: 15px;
       -webkit-appearance: none;
       outline: none;
-      margin: 0 auto;
+      margin: 20px auto 0 auto;
       cursor: pointer;
       transition: 200ms;
 
@@ -107,7 +107,7 @@
         align-items: center;
 
         p, a {
-            font-size: 13px;
+            font-size: 18px;
             margin: 20px 10px;
             padding: 5px 0;
             color: #000;
@@ -118,7 +118,8 @@
     .google-maps {
       width: 450px;
       height: 300px;
-      padding: 0 20px;
+      margin: 0 20px;
+      border-radius: 5px;
     }
 }
 
@@ -130,6 +131,7 @@
 
     a {
         color: #000;
+        font-size: 12px;
     }
 }
 
@@ -139,11 +141,21 @@
 @media screen and (max-width: 500px) {
 
 
-    .contact-form {
+    .contact {
+
+      h2 {
+        font-size: 30px;
+      }
+
+      h3 {
+        font-size: 16px;
+      }
+
+      .contact-form {
 
         input,
         textarea {
-            font-size: 10px;
+            font-size: 14px;
             padding: 10px;
             margin: 5px auto;
         }
@@ -152,6 +164,10 @@
             width: 120px;
             padding: 5px 30px;
           }
+      }
+
+      .error-text{
+        font-size: 14px;
       }
 
       .footer {
@@ -169,6 +185,7 @@
         }
     }
   }
+}
 
 //
 // ---------- MOBIL ----------
@@ -193,10 +210,21 @@
     justify-content: center;
 
     .google-maps {
-      width: 100%;
-      height: 300px;
+      width: auto;
       padding: 0 20px;
       margin-top: 40px;
+    }
+  }
+}
+
+
+@media screen and (max-width: 450px) {
+
+  .footer {
+
+    .google-maps {
+      width: 100%;
+      height: auto;
     }
   }
 }

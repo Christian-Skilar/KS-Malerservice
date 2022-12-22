@@ -9,7 +9,7 @@ import './Navigation.scss';
 const Navigation = () => {
 
     const [windowDimension, setWindowDimension] = useState(null);
-    const style = { color: "white", fontSize: "20px" }
+    const style = { color: "white", fontSize: "25px" }
 
     useEffect(() => {
       setWindowDimension(window.innerWidth);
@@ -34,18 +34,18 @@ const Navigation = () => {
             <div className="nav-conteiner">
             <a href="#header"><img className="logo" src={logo} alt="logo" /></a>
             <motion.ul className='nav-links'>
-                <li><a className="link-text" href="#header">Home</a></li>
-                <li><a className="link-text" href="#about">About</a></li>
-                <li><a className="link-text" href="#contact">Contact</a></li>
+                <li><a className="link-text" href="#header">Hjem</a></li>
+                <li><a className="link-text" href="#about">Om</a></li>
+                <li><a className="link-text" href="#contact">Kontakt</a></li>
             </motion.ul>
             </div>
         </motion.nav>
         ) : (
         <motion.nav className='navbar'>
             <motion.ul className='nav-links'>
-                <a href="#header" className='link-col link-text'><BiHomeSmile style={style}/>Home</a>
-                <a href="#about" className='link-col link-text'><AiOutlineFormatPainter style={style}/>About</a>
-                <a href="#contact" className='link-col link-text'><BiMailSend style={style}/>Contact</a>
+                <a href="#header" className='link-col link-text'><BiHomeSmile style={style}/>Hjem</a>
+                <a href="#about" className='link-col link-text'><AiOutlineFormatPainter style={style}/>Om</a>
+                <a href="#contact" className='link-col link-text'><BiMailSend style={style}/>Kontakt</a>
             </motion.ul>
         </motion.nav>
         )}

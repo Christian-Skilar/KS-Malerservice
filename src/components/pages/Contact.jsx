@@ -7,6 +7,7 @@ import { BsCheckCircleFill } from 'react-icons/bs';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import emailjs from '@emailjs/browser';
+import map from '../images/map.png'
 import './Contact.scss';
 
 
@@ -135,11 +136,11 @@ const Contact = () => {
       <div className='footer-col'>
         <div className='footer-row'>
           <AiOutlineMobile style={style} />
-          <p>12 34 56 78</p>
+          <p>958 37 634</p>
         </div>
         <div className='footer-row'>
           <BsPinMap style={style} />
-          <p>Adresse 3117 tønsberg</p>
+          <p>3117 Tønsberg</p>
         </div>
         <div className='footer-row'>
           <FiMail style={style} />
@@ -147,11 +148,10 @@ const Contact = () => {
         </div>
         <div className='footer-row'>
           <BiBuilding style={style} />
-          <p>KS Malerservice</p>
+          <p>KS Malerservice AS</p>
         </div>
       </div>
-
-      <iframe title="location" className='google-maps' frameBorder="0" scrolling="no" src="https://maps.google.com/maps?width=450&amp;height=300&amp;hl=en&amp;q=Severin%20Kj%C3%A6rs%20vei%2013%20E%20t%C3%B8nsberg+(KS%20Malerservice)&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+      <img src={map} alt="google maps" className='google-maps' />
 
     </div>
 
