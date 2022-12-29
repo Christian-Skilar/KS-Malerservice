@@ -9,7 +9,7 @@ import './Navigation.scss';
 const Navigation = () => {
 
     const [windowDimension, setWindowDimension] = useState(null);
-    const style = { color: "white", fontSize: "25px" }
+    const style = { color: "white", fontSize: "25px", marginBottom: "5px" }
 
     useEffect(() => {
       setWindowDimension(window.innerWidth);

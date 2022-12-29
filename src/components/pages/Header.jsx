@@ -13,7 +13,7 @@ const Header = () => {
           <img className='logo-mobile' src={logo} alt="logo" />
           <h3>God kvalitet fra start</h3>
           <p>
-            KS er ett lite malerfirma fra Tønsberg som tar på seg små og store 
+            KS er ett malerfirma fra Tønsberg som tar på seg små og store 
             oppdrag, både utvendig og innvendig.
           <br/>
           <br/>

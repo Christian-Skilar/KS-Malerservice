@@ -3,24 +3,31 @@ import { AiOutlineMobile } from 'react-icons/ai';
 import { BsPinMap } from 'react-icons/bs';
 import { BiBuilding } from 'react-icons/bi';
 import { FiMail } from 'react-icons/fi';
-import { BsCheckCircleFill } from 'react-icons/bs';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import emailjs from '@emailjs/browser';
 import map from '../images/map.png'
+import checkmark from '../images/checked.png';
 import './Contact.scss';
 
 
 
-const Result = () => {
+const Success = () => {
+  const [showElement, setShowElement] = useState(true);
+
+  const handleClick = () => {
+    setShowElement(false);
+  };
+  
   return (
-    <div className='success-message'>
-      <p>Din melding er sendt</p>
-      <BsCheckCircleFill />
-    </div>
+    showElement? <div className='popup'>
+      <img src={checkmark} alt="success check" />
+      <h2>Takk</h2>
+      <p>Din melding er sendt. Vi kommer tilbake til deg så fort som mulig</p>
+      <button onClick={handleClick}>OK</button>
+    </div>: null
   )
 }
-
 
 const Contact = () => {
 
@@ -28,7 +35,7 @@ const Contact = () => {
   const [result, showResult] = useState(false);
   const style = { color: "#0072BC", fontSize: "22px" }
 
-  const formik = useFormik({
+  const { errors, touched, handleBlur, values, handleChange, handleSubmit } = useFormik({
     initialValues: {
       name: '', 
       telefon: '',
@@ -36,14 +43,10 @@ const Contact = () => {
       message: '' 
     },
     validationSchema: Yup.object({
-      name: Yup.string()
-	    .required('Mangler Navn'),
-      email: Yup.string()
-	    .required('Mangler epost'),
-      telefon: Yup.string()
-	    .required('Krever telefon nummer'),
-      message: Yup.string()
-      .required('Melding er for kort')
+      name: Yup.string().required('Mangler Navn'),
+      email: Yup.string().email('Mangler epost').required('Mangler epost'),
+      telefon: Yup.string().required('Mangler telefon nummer'),
+      message: Yup.string().min(10, 'Melding er for kort').required('Melding er for kort')
     }),
     onSubmit: (values, {resetForm}) => {
       resetForm({ values: '' })
@@ -67,7 +70,7 @@ const Contact = () => {
           // Hide success message after some time
           setTimeout(() => {
             showResult(false);
-          }, 5000);
+          }, 15000);
    },
 });
 
@@ -77,59 +80,54 @@ const Contact = () => {
       <h2>Ta Kontakt</h2>
       <h3>For en hyggelig prat om ditt neste prosjekt</h3>
       <div className='border'/>
-      <form ref={form} onSubmit={formik.handleSubmit} className="contact-form">
+      <form ref={form} onSubmit={handleSubmit} className="contact-form">
 
               <input 
                   placeholder='Navn' 
                   type="text" 
                   name="name" 
-                  className="p-text"
-                  onChange={formik.handleChange}
-                  value={formik.values.name}
+                  onBlur={handleBlur}
+                  className={errors.name && touched.name ? "input-error" : ""}
+                  onChange={handleChange}
+                  value={values.name}
                   />
-              <div className={`error-text ${formik.touched.name && formik.errors.name ? 'show' : ''}`}>
-                {formik.errors.name}
-              </div>
+                  {errors.name && touched.name && <p className='error-message'>{errors.name}</p>}
 
                 <input 
                   placeholder='Tlf' 
                   type="number" 
                   name="telefon" 
-                  className="p-text"
-                  onChange={formik.handleChange}
-                  value={formik.values.telefon}
+                  onBlur={handleBlur}
+                  className={errors.telefon && touched.telefon ? "input-error" : ""}
+                  onChange={handleChange}
+                  value={values.telefon}
                   />
-              <div className={`error-text ${formik.touched.telefon && formik.errors.telefon ? 'show' : ''}`}>
-                {formik.errors.telefon}
-              </div>
+                  {errors.telefon && touched.telefon && <p className='error-message'>{errors.telefon}</p>}
             
                 <input 
                   placeholder='Epost' 
                   type="email" 
                   name="email" 
-                  className="p-text"
-                  onChange={formik.handleChange}
-                  value={formik.values.email}
+                  onBlur={handleBlur}
+                  className={errors.email && touched.email ? "input-error" : ""}
+                  onChange={handleChange}
+                  value={values.email}
                   />
-              <div className={`error-text ${formik.touched.email && formik.errors.email ? 'show' : ''}`}>
-                {formik.errors.email}
-              </div>
-
+                  {errors.email && touched.email && <p className='error-message'>{errors.email}</p>}
 
                 <textarea 
                   placeholder='Melding' 
                   name="message" 
-                  className="p-text"
-                  onChange={formik.handleChange}
-                  value={formik.values.message}
+                  onBlur={handleBlur}
+                  className={errors.message && touched.message ? "input-error" : ""}
+                  onChange={handleChange}
+                  value={values.message}
                   />
-                <div className={`error-text ${formik.touched.message && formik.errors.message ? 'show' : ''}`}>
-                  {formik.errors.message}
-                </div>
+                  {errors.message && touched.message && <p className='error-message'>{errors.message}</p>}
             
           <input type="submit" value="Send" className="button" />
-          <div>{result ? <Result/> : null}</div>
         </form>
+        {result ? <Success/> : null}
     </div>
 
     <div className='footer'>

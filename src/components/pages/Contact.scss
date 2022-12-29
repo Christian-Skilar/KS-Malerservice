@@ -15,7 +15,65 @@
       width: 200px;
       border-top: 2px solid #1A8AD2;
     }
-}
+
+    .popup {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      margin-top: -340px;
+      background-color: #fff;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      width: 320px;
+      padding: 40px 20px;
+      box-shadow:
+      2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02),
+      6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+      12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+      22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+      41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05),
+      100px 100px 80px rgba(0, 0, 0, 0.07);
+      transition: all 300ms ease-in;
+  
+      h2 {
+        color: #000 !important;
+        font-size: 27px;
+        margin: 20px 0 10px 0;
+      }
+  
+      p {
+        font-size: 14px;
+      }
+  
+      img {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 60px;
+        border-radius: 50%;
+        box-shadow:
+        3.4px 3.4px 2.7px rgba(0, 0, 0, 0.022),
+        8.7px 8.7px 6.9px rgba(0, 0, 0, 0.031),
+        17.7px 17.7px 14.2px rgba(0, 0, 0, 0.039),
+        36.5px 36.5px 29.2px rgba(0, 0, 0, 0.048),
+        100px 100px 80px rgba(0, 0, 0, 0.07);
+      }
+  
+      button {
+        color: #fff;
+        background-color: #33BA7C;
+        border: none;
+        padding: 12px;
+        width: 200px;
+        margin: 40px auto -15px auto;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    }
+  }
 
   .contact-form {
     width: 60%;
@@ -33,7 +91,8 @@
       textarea {
         position: relative;
         width: 90%;
-        padding: 0.95rem;
+        padding: 15px 10px;
+        font-size: 16px;
         margin: 10px auto;
         border: none;
         border-radius: 3px;
@@ -42,17 +101,22 @@
       }
   
       textarea {
-        height: 170px;
+        height: 120px;
         resize: vertical;
       }
 
-      .error-text{
-        color: #FC4E49;
-        width: 100%;
+      .input-error {
+        border: 2px solid #FC4E49;
+      }
+
+      .error-message{
+        color: #fff;
+        text-transform: capitalize;
+        width: 90%;
         text-align: left;
-        font-size: 20px;
+        font-size: 14px;
         font-style: italic;
-        margin: 0 0 10px 0;
+        margin: -5px auto 15px auto;
       }
     
   
@@ -62,7 +126,7 @@
       align-items: center;
       width: 160px;
       padding: 15px;
-      border-radius: 10px;
+      border-radius: 5px;
       border: 1px solid #fff;
       background-color: #0072BC;
       color: #fff;
@@ -77,22 +141,8 @@
         background-color: #1A8AD2;
         width: 160px;
     }
-    }
-
-    .success-message {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: #6AFF6E;
-      margin: 15px auto;
-
-      p {
-        margin-right: 10px;
-      }
-
-    }
-  
-  }
+  }  
+}
 
 .footer {
     display: flex;
@@ -135,6 +185,40 @@
     }
 }
 
+
+//
+// ---------- MOBIL ----------
+//
+  @media screen and (max-width: 673px) {
+
+  .contact-form {
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .footer {
+    justify-content: center;
+
+    .google-maps {
+      width: auto;
+      padding: 0 20px;
+      margin-top: 40px;
+    }
+  }
+}
+
+//
+// ---------- MOBIL ----------
+//
+  @media screen and (max-width: 600px) {
+      
+    .copyright {
+        margin-bottom: 62px;
+    }
+  }
+
+
+
 //
 // ---------- MOBIL ----------
 //
@@ -142,7 +226,6 @@
 
 
     .contact {
-
       h2 {
         font-size: 30px;
       }
@@ -152,12 +235,16 @@
       }
 
       .contact-form {
-
         input,
         textarea {
-            font-size: 14px;
-            padding: 10px;
-            margin: 5px auto;
+          width: 100%;
+          font-size: 14px;
+          padding: 10px;
+          margin: 10px auto;
+        }
+
+        .error-message{
+          width: 100%;
         }
 
         .button {
@@ -166,13 +253,8 @@
           }
       }
 
-      .error-text{
-        font-size: 14px;
-      }
-
       .footer {
         margin: 30px auto;
-    
         .footer-row {
     
             p {
@@ -187,41 +269,14 @@
   }
 }
 
-//
-// ---------- MOBIL ----------
-//
-  @media screen and (max-width: 600px) {
-    
-    .copyright {
-        margin-bottom: 62px;
-    }
-  }
-
-//
-// ---------- MOBIL ----------
-//
-@media screen and (max-width: 673px) {
-
-  .contact-form {
-    width: 90%;
-  }
-
-  .footer {
-    justify-content: center;
-
-    .google-maps {
-      width: auto;
-      padding: 0 20px;
-      margin-top: 40px;
-    }
-  }
-}
-
 
 @media screen and (max-width: 450px) {
 
-  .footer {
+  .contact-form {
+    padding: 50px 15px 30px 15px;
+  }
 
+  .footer {
     .google-maps {
       width: 100%;
       height: auto;
