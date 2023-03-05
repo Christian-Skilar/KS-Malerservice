@@ -13,16 +13,13 @@
     padding: 0 10px;
 
     h1 {
-        font-family: 'Rubik', sans-serif;
         margin: 30px 0 0 0;
         font-size: 60px;
-        letter-spacing: 3px;
         color: #0072BC;
     }
 
     h3 {
         width: fit-content;
-        font-family: 'Rubik', sans-serif;
         font-size: 20px;
         color: #353439;
         border-bottom: 2px solid #0072BC;
@@ -31,9 +28,12 @@
     p {
         margin: 20px 0 40px 0;
         max-width: 600px;
+        text-align: justify;
+        color: #404040;
     }
 
     a {
+        font-size: 16px;
         color: #fff;
         text-decoration: none;
         padding: 7px 35px;

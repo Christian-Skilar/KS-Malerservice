@@ -22,9 +22,9 @@ const About = () => {
           >
           <img className='icons' src={faglig} alt="avtale" />
           <p>
-            Lang faglig erfaring. enten jobben er liten eller stor, vi kommer
+            Lang faglig erfaring. Enten jobben er liten eller stor, vi kommer
             gjerne hjem til deg for en gratis
-            befaring og gir et pristilbud.
+            befaring.
           </p>
         </motion.div>
 

@@ -6,8 +6,9 @@
     padding-top: 100px;
 
     h3 {
-        font-weight: 100;
+        font-weight: 300;
         margin: 5px 0 40px 0;
+        color: #404040;
     }
 
     .border {
@@ -92,7 +93,7 @@
         position: relative;
         width: 90%;
         padding: 15px 10px;
-        font-size: 16px;
+        font-size: 12px;
         margin: 10px auto;
         border: none;
         border-radius: 3px;
@@ -114,7 +115,7 @@
         text-transform: capitalize;
         width: 90%;
         text-align: left;
-        font-size: 14px;
+        font-size: 12px;
         font-style: italic;
         margin: -5px auto 15px auto;
       }
@@ -157,10 +158,10 @@
         align-items: center;
 
         p, a {
-            font-size: 18px;
+            font-size: 14px;
             margin: 20px 10px;
             padding: 5px 0;
-            color: #000;
+            color: #404040;
             text-decoration: none;
         }
     }
@@ -181,7 +182,7 @@
 
     a {
         color: #000;
-        font-size: 12px;
+        font-size: 10px;
     }
 }
 
